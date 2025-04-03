@@ -13,21 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LightsOut
+namespace LightsOut.Views
 {
     /// <summary>
-    /// Interaction logic for Statistics.xaml
+    /// Interaction logic for About.xaml
     /// </summary>
-    public partial class Statistics : Page
+    public partial class About : Page
     {
-        public Statistics()
+        public About()
         {
             InitializeComponent();
+            Username.Text = MainWindow.programUser.Name;
+            Uri imageUri = new Uri(MainWindow.programUser.Avatar, UriKind.Absolute);
+            PfpUser.Source = new BitmapImage(imageUri);
         }
 
         private void BackClick(object sender, RoutedEventArgs e)
         {
-            MainWindow.Instance.ChangeWindow(new Uri("./Menu.xaml", UriKind.Relative));
+            MainWindow.Instance.ChangeWindow(new Uri("/Views/Menu.xaml", UriKind.Relative));
         }
     }
 }

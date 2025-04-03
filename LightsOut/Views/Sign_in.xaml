@@ -1,0 +1,60 @@
+﻿<Page x:Class="LightsOut.Views.Sign_in"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LightsOut.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="800">
+
+    <StackPanel Height="auto" Width="auto" 
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+        <TextBlock x:Name="Titlu" Width="auto"  FontSize="25"
+            HorizontalAlignment="Center">
+            Lights Out!
+        </TextBlock>
+        <TextBlock x:Name="Signin" Width="auto" FontSize="20"
+            Margin="0,10,0,0">
+            Log-in/Sign-up
+        </TextBlock>
+
+        <TextBlock x:Name="Username" Width="auto"
+            Margin="0,10,0,0">
+            Avatar/Username
+        </TextBlock>
+        <Grid HorizontalAlignment="Left">
+            <ComboBox Name="PfpSelect" 
+                      SelectedIndex="0"
+                      Width="50" Height="30" 
+                      HorizontalAlignment="Left"
+                      SelectionChanged="PfpSelect_SelectionChanged">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding}" Width="24" Height="24"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="ComboBoxItem">
+                        <Setter Property="Height" Value="30"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+                
+                <ComboBox.Items>
+                    <BitmapImage UriSource="../Img/urs.png" />
+                    <BitmapImage UriSource="../Img/girafa.png" />
+                </ComboBox.Items>
+            </ComboBox>
+            <TextBox x:Name="UsernameBox" Width="200" HorizontalAlignment="Left" Margin="55,0,0,0"/>
+        </Grid>
+
+        <Button Width="100" Margin="0,10,0,0" Click="LogInClick">
+            Log-in
+        </Button>
+        <Button Width="100" Margin="0,10,0,0" Click="SignUpClick">
+            Sign-up
+        </Button>
+    </StackPanel>
+</Page>

@@ -18,12 +18,14 @@ namespace LightsOut;
 public partial class MainWindow : Window
 {
     public static MainWindow? Instance { get; private set; }
-
+    public static LightsOut.Models.User? programUser { get; private set; }
     public MainWindow()
     {
         InitializeComponent();
+        System.IO.Directory.CreateDirectory("users");
         Instance = this;
-        Instance.ChangeWindow(new Uri("./Sign_in.xaml", UriKind.Relative));
+        programUser = new LightsOut.Models.User();
+        Instance.ChangeWindow(new Uri("/Views/Sign_in.xaml", UriKind.Relative));
         Instance.ResizeMode = ResizeMode.NoResize;
     }
     public void ChangeWindow(System.Uri WindowName)

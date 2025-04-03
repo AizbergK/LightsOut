@@ -8,4 +8,23 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Img\girafa.png" />
+    <None Remove="Img\urs.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Img\girafa.png" />
+    <Resource Include="Img\urs.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
 </Project>
